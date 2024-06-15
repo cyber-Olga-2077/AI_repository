@@ -1,0 +1,6 @@
+services:
+  web:
+    build: .
+    container_name: olga-ai-repository
+    ports:
+      - "4008:5000"

@@ -16,8 +16,7 @@ def index(path):
     result = [None, None]
     if form.validate_on_submit():
         file = request.files['image']
-        result = None
         if file.filename.split('.')[-1] in allowed_extensions:
             result = make_prediction(file)
-    print(result)
+    print(result, flush=True)
     return render_template('index.html', form=form, result=result[0], other=result[1])

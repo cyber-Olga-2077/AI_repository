@@ -20,7 +20,7 @@ def make_prediction(image):
         images = np.array([image])
         result = loaded_model.predict(images)[0]
         labels = [labels_list[i] for i in np.argsort(result)[::-1] if result[i] > 0.1]
-        return [labels[0], ", ".join(labels[1:])]
+        return [labels[0], ", ".join(labels[1:])] if len(labels) > 0 else ["unrecognizable at the current moment", None]
     except Exception as e:
         print(e)
     return [None, None]

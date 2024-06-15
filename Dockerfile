@@ -1,6 +1,7 @@
 FROM python:3.10.12-slim-bookworm
 WORKDIR /flask-app
 COPY ./requirements.txt /flask-app
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 5000
