@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <title>VisionGuard</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        <h1>VisionGuard - safer travel, safer life</h1>
+        {% block content %}{% endblock %}
+    </body>
+</html>

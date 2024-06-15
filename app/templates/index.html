@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}<main>
+    {% if result %}<h2>The sign was recognized as: {{ result }}</h2>{% endif %}
+    {% if other %}<h4>Other viable results: {{other}}</h4>{% endif %}
+    <h3>{% if result %}Upload the image of the next sign!{% else %}Upload the image of the sign{% endif %}</h3>
+    <form action="" method="post" novalidate enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.image() }}
+            {% for error in form.image.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    </main>
+{% endblock %}

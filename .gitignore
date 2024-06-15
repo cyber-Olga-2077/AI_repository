@@ -1,0 +1,4 @@
+venv/
+*.joblib
+.idea/
+final_model.tf
